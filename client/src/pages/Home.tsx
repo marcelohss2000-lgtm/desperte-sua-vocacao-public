@@ -391,7 +391,7 @@ export default function Home() {
                 <p className="text-sm text-blue-200 font-semibold mb-3">Você recebe:</p>
                 <ul className="space-y-2 mb-4">
                   {[
-                    "Ebook completo (~100 páginas)",
+                    "Ebook completo (~95 páginas)",
                     "Vídeo inspiracional (HD)",
                     "Áudio completo (2+ horas)"
                   ].map((item, idx) => (
@@ -463,7 +463,7 @@ export default function Home() {
               },
               {
                 question: "Quanto tempo leva para completar o material?",
-                answer: "Não há prazo fixo. O ebook tem cerca de 100 páginas (2-3 horas de leitura). O áudio tem 2+ horas. O workbook é prático e pode ser feito no seu ritmo. Recomendamos dedicar 2-4 semanas para uma jornada completa, mas você pode ir mais rápido ou mais lento conforme necessário."
+                answer: "Não há prazo fixo. O ebook tem cerca de 95 páginas (2-3 horas de leitura). O áudio tem 2+ horas. O workbook é prático e pode ser feito no seu ritmo. Recomendamos dedicar 2-4 semanas para uma jornada completa, mas você pode ir mais rápido ou mais lento conforme necessário."
               },
               {
                 question: "Há suporte ou comunidade após a compra?",
