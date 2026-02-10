@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Check, BookOpen, Video, Headphones, Podcast, FileText, Sparkles, Heart, Compass, Zap } from "lucide-react";
+import { Check, BookOpen, Video, Headphones, Podcast, FileText, Sparkles, Heart, Compass, Zap, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -156,55 +157,75 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: BookOpen,
-                title: "Ebook Completo",
-                subtitle: "Desperte Sua Vocação – O Caminho Iluminado",
-                description: "Um mapa para a jornada da sua alma, cobrindo desejo de sentido, Grande História, castelo interior, individuação, vocação, sofrimento, amor, missão e legado."
-              },
-              {
-                icon: Video,
-                title: "Vídeo Inspiracional",
-                subtitle: "Desperte Sua Vocação",
-                description: "Sintetiza os pilares do ebook em uma mensagem clara e visualmente envolvente. Apresenta os 3 caminhos para o sentido segundo Viktor Frankl."
-              },
-              {
-                icon: Headphones,
-                title: "Áudio Completo",
-                subtitle: "Mais de 2 horas de conteúdo",
-                description: "Ouça no carro, na caminhada, nas tarefas do dia a dia. Conteúdo absorvido pela escuta, entrando no coração pela repetição."
-              },
-              {
-                icon: Podcast,
-                title: "Podcast Exclusivo",
-                subtitle: "A Jornada da Vocação (~14 minutos)",
-                description: "Episódio curto e profundo. Ideal para momentos de confusão ou decisões importantes. Reforça a tríade central do discernimento."
-              },
-              {
-                icon: FileText,
-                title: "Fichário Prático",
-                subtitle: "A Jornada da Vocação (Workbook)",
-                description: "Seu laboratório de vocação: processe, escreva, ore, decida. Transforme ideias em passos concretos na sua jornada."
-              },
-              {
-                icon: Sparkles,
-                title: "Bônus Exclusivos",
-                subtitle: "Recursos adicionais",
-                description: "Acesso a materiais complementares, exercícios práticos e ferramentas para aprofundar sua jornada de discernimento."
-              }
-            ].map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="bg-blue-900/30 backdrop-blur border border-blue-500/20 rounded-xl p-6 hover:border-amber-400/50 transition-all hover:shadow-lg hover:shadow-amber-400/20">
-                  <Icon className="w-8 h-8 text-amber-400 mb-4" />
-                  <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
-                  <p className="text-sm text-amber-300 font-semibold mb-3">{item.subtitle}</p>
-                  <p className="text-blue-100">{item.description}</p>
-                </div>
-              );
-            })}
+          {/* Core Content */}
+          <div className="mb-16">
+            <h3 className="text-2xl font-bold text-white mb-8">Núcleo Principal:</h3>
+            <div className="grid md:grid-cols-3 gap-8">
+              {[
+                {
+                  icon: BookOpen,
+                  title: "Ebook Completo",
+                  subtitle: "Desperte Sua Vocação – O Caminho Iluminado",
+                  description: "Um mapa para a jornada da sua alma, cobrindo desejo de sentido, Grande História, castelo interior, individuação, vocação, sofrimento, amor, missão e legado."
+                },
+                {
+                  icon: Video,
+                  title: "Vídeo Inspiracional",
+                  subtitle: "Desperte Sua Vocação",
+                  description: "Sintetiza os pilares do ebook em uma mensagem clara e visualmente envolvente. Apresenta os 3 caminhos para o sentido segundo Viktor Frankl."
+                },
+                {
+                  icon: Headphones,
+                  title: "Áudio Completo",
+                  subtitle: "Mais de 2 horas de conteúdo",
+                  description: "Ouça no carro, na caminhada, nas tarefas do dia a dia. Conteúdo absorvido pela escuta, entrando no coração pela repetição."
+                }
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="bg-blue-900/30 backdrop-blur border border-blue-500/20 rounded-xl p-6 hover:border-amber-400/50 transition-all hover:shadow-lg hover:shadow-amber-400/20">
+                    <Icon className="w-8 h-8 text-amber-400 mb-4" />
+                    <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+                    <p className="text-sm text-amber-300 font-semibold mb-3">{item.subtitle}</p>
+                    <p className="text-blue-100">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Bonus Section */}
+          <div className="bg-gradient-to-r from-amber-900/30 to-orange-900/30 backdrop-blur border border-amber-500/30 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-amber-300 mb-8 flex items-center gap-2">
+              <Sparkles className="w-6 h-6" />
+              Bônus Exclusivos
+            </h3>
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  icon: Podcast,
+                  title: "Podcast Exclusivo",
+                  subtitle: "A Jornada da Vocação (~14 minutos)",
+                  description: "Episódio curto e profundo, para lembrar que vocação é chamado, não invenção. Distinguir propósito verdadeiro de promessas vazias. Ideal para momentos de confusão ou decisões importantes."
+                },
+                {
+                  icon: FileText,
+                  title: "Fichário Prático",
+                  subtitle: "A Jornada da Vocação (Workbook)",
+                  description: "Seu laboratório de vocação: processe, escreva, ore, decida. Transforme ideias em passos concretos na sua jornada com exercícios práticos e reflexões guiadas."
+                }
+              ].map((item, idx) => {
+                const Icon = item.icon;
+                return (
+                  <div key={idx} className="bg-blue-900/50 backdrop-blur border border-amber-400/30 rounded-xl p-6">
+                    <Icon className="w-8 h-8 text-amber-400 mb-4" />
+                    <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
+                    <p className="text-sm text-amber-300 font-semibold mb-3">{item.subtitle}</p>
+                    <p className="text-blue-100">{item.description}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         </div>
       </section>
@@ -368,13 +389,11 @@ export default function Home() {
 
               <div className="bg-blue-900/50 rounded-lg p-6 mb-8 text-left">
                 <p className="text-sm text-blue-200 font-semibold mb-3">Você recebe:</p>
-                <ul className="space-y-2">
+                <ul className="space-y-2 mb-4">
                   {[
                     "Ebook completo (~100 páginas)",
                     "Vídeo inspiracional (HD)",
-                    "Áudio completo (2+ horas)",
-                    "Podcast exclusivo (~14 minutos)",
-                    "Fichário prático (Workbook em PDF)"
+                    "Áudio completo (2+ horas)"
                   ].map((item, idx) => (
                     <li key={idx} className="flex items-center gap-2 text-blue-50">
                       <Check className="w-4 h-4 text-amber-400" />
@@ -382,6 +401,20 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
+                <div className="border-t border-blue-700 pt-4">
+                  <p className="text-xs text-amber-300 font-semibold mb-2">+ BÔNUS EXCLUSIVOS:</p>
+                  <ul className="space-y-2">
+                    {[
+                      "Podcast exclusivo (~14 minutos)",
+                      "Fichário prático (Workbook em PDF)"
+                    ].map((item, idx) => (
+                      <li key={idx} className="flex items-center gap-2 text-amber-50">
+                        <Sparkles className="w-4 h-4 text-amber-400" />
+                        {item}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
 
               <Button
@@ -399,6 +432,80 @@ export default function Home() {
             <p className="text-blue-100 text-lg">
               <span className="text-amber-400 font-semibold">✨ Investimento único</span> que pode transformar como você vê sua vida e seu propósito.
             </p>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-20 bg-gradient-to-r from-slate-800 to-blue-900">
+        <div className="container">
+          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
+            Perguntas Frequentes
+          </h2>
+
+          <div className="max-w-3xl mx-auto space-y-4 mb-12">
+            {[
+              {
+                question: "Como funciona o acesso ao material?",
+                answer: "Após a compra, você receberá um email com um link de acesso. Você poderá baixar todos os arquivos (ebook, vídeo, áudio, podcast e workbook) imediatamente. O acesso é vitalício — você pode revisitar o conteúdo quantas vezes quiser."
+              },
+              {
+                question: "Posso acessar em múltiplos dispositivos?",
+                answer: "Sim! Você pode acessar o material em computador, tablet e smartphone. Os arquivos são seus para usar como preferir — offline ou online, em qualquer dispositivo."
+              },
+              {
+                question: "Qual é a política de reembolso?",
+                answer: "Se você não ficar satisfeito nos primeiros 7 dias, oferecemos reembolso total, sem perguntas. Queremos que você se sinta seguro ao investir em sua jornada de discernimento vocacional."
+              },
+              {
+                question: "O material é apenas para pessoas religiosas?",
+                answer: "Não. Embora o material explore dimensões espirituais, ele é acessível a qualquer pessoa que busque profundidade e sentido na vida. Os autores citados (Frankl, Jung, etc.) oferecem perspectivas universais sobre propósito e significado."
+              },
+              {
+                question: "Quanto tempo leva para completar o material?",
+                answer: "Não há prazo fixo. O ebook tem cerca de 100 páginas (2-3 horas de leitura). O áudio tem 2+ horas. O workbook é prático e pode ser feito no seu ritmo. Recomendamos dedicar 2-4 semanas para uma jornada completa, mas você pode ir mais rápido ou mais lento conforme necessário."
+              },
+              {
+                question: "Há suporte ou comunidade após a compra?",
+                answer: "Você terá acesso a um email de suporte para dúvidas sobre o material. Estamos desenvolvendo uma comunidade exclusiva para clientes — fique atento para atualizações!"
+              },
+              {
+                question: "O que diferencia este material de outros cursos sobre propósito?",
+                answer: "Este não é um 'curso rápido'. É um caminho estruturado que integra espiritualidade, psicologia, filosofia e vida prática. Baseado em autores renomados como Viktor Frankl, Teresa d'Ávila e Jung, com linguagem clara e exemplos práticos. O workbook transforma ideias em ações concretas."
+              },
+              {
+                question: "Posso compartilhar o material com amigos?",
+                answer: "O material é para uso pessoal. Se seus amigos se interessarem, cada um deve adquirir sua própria cópia. Assim você também nos ajuda a continuar criando conteúdo de qualidade."
+              }
+            ].map((faq, idx) => (
+              <div key={idx} className="bg-blue-900/30 backdrop-blur border border-blue-500/20 rounded-xl overflow-hidden">
+                <button
+                  onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
+                  className="w-full p-6 flex items-start justify-between hover:bg-blue-900/50 transition-colors text-left"
+                >
+                  <h3 className="text-lg font-bold text-white pr-4">{faq.question}</h3>
+                  <ChevronDown
+                    className={`w-5 h-5 text-amber-400 flex-shrink-0 transition-transform ${
+                      expandedFaq === idx ? "rotate-180" : ""
+                    }`}
+                  />
+                </button>
+                {expandedFaq === idx && (
+                  <div className="px-6 pb-6 border-t border-blue-500/20">
+                    <p className="text-blue-100 leading-relaxed">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="max-w-3xl mx-auto bg-gradient-to-r from-blue-900/50 to-slate-900/50 backdrop-blur border border-blue-500/30 rounded-xl p-8 text-center">
+            <p className="text-blue-100 mb-4">
+              Ainda tem dúvidas? Entre em contato conosco!
+            </p>
+            <Button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold">
+              Enviar uma Mensagem
+            </Button>
           </div>
         </div>
       </section>
