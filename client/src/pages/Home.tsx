@@ -1,20 +1,22 @@
 import { Button } from "@/components/ui/button";
 import { Check, BookOpen, Video, Headphones, Podcast, FileText, Sparkles, Heart, Compass, Zap, ChevronDown } from "lucide-react";
 import { useState } from "react";
+import { useLocation } from "wouter";
 
 export default function Home() {
   const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
+  const [, setLocation] = useLocation();
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (email) {
       setSubmitted(true);
       setTimeout(() => {
-        setSubmitted(false);
-        setEmail("");
-      }, 3000);
+        setLocation("/obrigado");
+      }, 1500);
     }
   };
 
@@ -421,11 +423,11 @@ export default function Home() {
                 onClick={handleSubmit}
                 className="w-full bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50"
               >
-                {submitted ? "✓ Acesso Confirmado!" : "Quero Acessar Agora - R$ 97"}
+                {submitted ? "✓ Processando..." : "Quero Acessar Agora - R$ 97"}
               </Button>
 
               <p className="text-xs text-blue-300 mt-4 text-center">
-                Pagamento seguro. Acesso imediato após confirmação.
+                Dúvidas? Envie um email para <a href="mailto:Contato@conquista22produtosdigitais.com" className="text-amber-400 hover:text-amber-300 font-semibold">Contato@conquista22produtosdigitais.com</a>
               </p>
             </div>
 
