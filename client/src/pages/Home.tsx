@@ -469,7 +469,7 @@ export default function Home() {
               },
               {
                 question: "Há suporte ou comunidade após a compra?",
-                answer: "Você terá acesso a um email de suporte para dúvidas sobre o material. Estamos desenvolvendo uma comunidade exclusiva para clientes — fique atento para atualizações!"
+                answer: "Sim! Você terá acesso a suporte por email em Contato@conquista22produtosdigitais.com para dúvidas sobre o material. Estamos desenvolvendo uma comunidade exclusiva para clientes — fique atento para atualizações!"
               },
               {
                 question: "O que diferencia este material de outros cursos sobre propósito?",
@@ -505,9 +505,12 @@ export default function Home() {
             <p className="text-blue-100 mb-4">
               Ainda tem dúvidas? Entre em contato conosco!
             </p>
-            <Button className="bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold">
-              Enviar uma Mensagem
-            </Button>
+            <a
+              href="mailto:Contato@conquista22produtosdigitais.com"
+              className="inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-semibold px-6 py-3 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50"
+            >
+              Enviar um Email: Contato@conquista22produtosdigitais.com
+            </a>
           </div>
         </div>
       </section>
