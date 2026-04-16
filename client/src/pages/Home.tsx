@@ -214,7 +214,7 @@ export default function Home() {
                   icon: FileText,
                   title: "Fichário Prático",
                   subtitle: "A Jornada da Vocação (Workbook)",
-                  description: "Seu laboratório de vocação: processe, escreva, ore, decida. Transforme ideias em passos concretos na sua jornada com exercícios práticos e reflexões guiadas."
+                  description: "Seu laboratório de vocação: mergulhe na jornada interior e descubra seu chamado autêntico. Através de reflexões guiadas baseadas em Viktor Frankl, Teresa d'Ávila e Carl Jung, você processará suas inquietações, escreverá suas descobertas, orará por clareza e decidirá seus próximos passos concretos. Transforme a Grande História em sua história pessoal com exercícios práticos que conectam o divino ao seu propósito único."
                 }
               ].map((item, idx) => {
                 const Icon = item.icon;
