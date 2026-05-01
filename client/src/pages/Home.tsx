@@ -4,20 +4,16 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 
 export default function Home() {
-  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   const [, setLocation] = useLocation();
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (email) {
-      setSubmitted(true);
-      setTimeout(() => {
-        window.location.href = "https://pay.kiwify.com.br/ijYxC0g";
-      }, 1500);
-    }
+  const handleCheckout = () => {
+    setSubmitted(true);
+    setTimeout(() => {
+      window.location.href = "https://pay.kiwify.com.br/ijYxC0g";
+    }, 500);
   };
 
   return (
@@ -430,23 +426,13 @@ export default function Home() {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-4 mb-6">
-                <input
-                  type="email"
-                  placeholder="Seu melhor email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  className="w-full px-4 py-3 rounded-lg bg-slate-800 border border-blue-500/30 text-white placeholder-blue-300 focus:outline-none focus:border-amber-400 transition-all"
-                />
-                <Button
-                  type="submit"
-                  disabled={!email || submitted}
-                  className="w-full bg-amber-500 hover:bg-amber-600 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50"
-                >
-                  {submitted ? "✓ Processando..." : "Quero Acessar Agora - R$ 97"}
-                </Button>
-              </form>
+              <Button
+                onClick={handleCheckout}
+                disabled={submitted}
+                className="w-full bg-amber-500 hover:bg-amber-600 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50 mb-6"
+              >
+                {submitted ? "✓ Redirecionando..." : "Quero Acessar Agora - R$ 97"}
+              </Button>
 
               <p className="text-xs text-blue-300 mt-4 text-center">
                 Dúvidas? Envie um email para <a href="mailto:Contato@conquista22produtosdigitais.com" className="text-amber-400 hover:text-amber-300 font-semibold">Contato@conquista22produtosdigitais.com</a>
