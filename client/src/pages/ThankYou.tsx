@@ -134,13 +134,13 @@ export default function ThankYou() {
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button
-                onClick={() => setLocation("/")}
-                className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-emerald-500/50 flex items-center gap-2"
+              <a
+                href="https://kiwify.app/8NpcUiT"
+                className="bg-emerald-500 hover:bg-emerald-600 text-white font-semibold px-8 py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-emerald-500/50 flex items-center gap-2 justify-center"
               >
-                Voltar para Home
+                Acessar Meu Produto
                 <ArrowRight className="w-4 h-4" />
-              </Button>
+              </a>
               
               <a
                 href="mailto:Contato@conquista22produtosdigitais.com"

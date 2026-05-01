@@ -15,7 +15,7 @@ export default function Home() {
     if (email) {
       setSubmitted(true);
       setTimeout(() => {
-        setLocation("/obrigado");
+        window.location.href = "https://pay.kiwify.com.br/ijYxC0g";
       }, 1500);
     }
   };
