@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 
 export default function Home() {
-  // Force cache bust - v2
+  // Force cache bust - v3 - Hard rebuild
   const [submitted, setSubmitted] = useState(false);
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
