@@ -13,7 +13,7 @@ export default function Home() {
   const handleCheckout = () => {
     setSubmitted(true);
     setTimeout(() => {
-      window.location.href = "https://pay.kiwify.com.br/ijYxC0g";
+      window.location.href = "https://kiwify.app/cU9GAE0";
     }, 500);
   };
 
