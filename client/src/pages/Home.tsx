@@ -3,7 +3,7 @@ import { Check, BookOpen, Video, Headphones, Podcast, FileText, Sparkles, Heart,
 import { useState } from "react";
 
 export default function Home() {
-  // Force cache bust - v5 - RADICAL FIX - DIRECT LINK TO KIWIFY
+  // Force cache bust - v7 - NUCLEAR FORCE REBUILD - TIMESTAMP: 2026-05-04T23:10:00Z
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
