@@ -1,21 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { Check, BookOpen, Video, Headphones, Podcast, FileText, Sparkles, Heart, Compass, Zap, ChevronDown } from "lucide-react";
 import { useState } from "react";
-import { useLocation } from "wouter";
 
 export default function Home() {
-  // Force cache bust - v4 - COMPLETE REBUILD - REMOVE EMAIL FORM
-  const [submitted, setSubmitted] = useState(false);
+  // Force cache bust - v5 - RADICAL FIX - DIRECT LINK TO KIWIFY
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
-
-  const [, setLocation] = useLocation();
-
-  const handleCheckout = () => {
-    setSubmitted(true);
-    setTimeout(() => {
-      window.location.href = "https://kiwify.app/cU9GAE0";
-    }, 500);
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-900 via-blue-900 to-slate-900">
@@ -427,13 +416,14 @@ export default function Home() {
                 </div>
               </div>
 
-              <Button
-                onClick={handleCheckout}
-                disabled={submitted}
-                className="w-full bg-amber-500 hover:bg-amber-600 disabled:opacity-50 disabled:cursor-not-allowed text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50 mb-6"
+              <a
+                href="https://kiwify.app/cU9GAE0"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50 mb-6 text-center"
               >
-                {submitted ? "✓ Redirecionando..." : "Quero Acessar Agora - R$ 97"}
-              </Button>
+                Quero Acessar Agora - R$ 97
+              </a>
 
               <p className="text-xs text-blue-300 mt-4 text-center">
                 Dúvidas? Envie um email para <a href="mailto:Contato@conquista22produtosdigitais.com" className="text-amber-400 hover:text-amber-300 font-semibold">Contato@conquista22produtosdigitais.com</a>
