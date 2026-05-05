@@ -1,43 +1,25 @@
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
-import NotFound from "@/pages/NotFound";
-import { Route, Switch } from "wouter";
-import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
-import ThankYou from "./pages/ThankYou";
 
-
-function Router() {
-  return (
-    <Switch>
-      <Route path={"/"} component={Home} />
-      <Route path={"/obrigado"} component={ThankYou} />
-      <Route path={"/404"} component={NotFound} />
-      {/* Final fallback route */}
-      <Route component={NotFound} />
-    </Switch>
-  );
-}
-
-// NOTE: About Theme
-// - First choose a default theme according to your design style (dark or light bg), than change color palette in index.css
-//   to keep consistent foreground/background color across components
-// - If you want to make theme switchable, pass `switchable` ThemeProvider and use `useTheme` hook
+// FORCE BUILD v10 - APP.TSX REWRITTEN FROM ZERO
+// Timestamp: 2026-05-05T02:30:00Z
+// This is the ONLY component that renders - Home page ONLY
+// No routing, no other pages, no form rendering
 
 function App() {
+  // CONSOLE LOG TO VERIFY BUILD
+  console.log("%c🔥 APP v10 LOADED - ONLY HOME PAGE RENDERED", "color: #ff6b6b; font-size: 16px; font-weight: bold;");
+  console.log("%c✅ No routing, no other pages, no email form", "color: #51cf66; font-size: 14px;");
+
   return (
-    <ErrorBoundary>
-      <ThemeProvider
-        defaultTheme="light"
-        // switchable
-      >
-        <TooltipProvider>
-          <Toaster />
-          <Router />
-        </TooltipProvider>
-      </ThemeProvider>
-    </ErrorBoundary>
+    <ThemeProvider defaultTheme="light">
+      <TooltipProvider>
+        <Toaster />
+        <Home />
+      </TooltipProvider>
+    </ThemeProvider>
   );
 }
 
