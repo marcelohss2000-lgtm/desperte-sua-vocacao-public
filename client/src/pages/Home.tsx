@@ -2,8 +2,12 @@ import { Button } from "@/components/ui/button";
 import { Check, BookOpen, Video, Headphones, Podcast, FileText, Sparkles, Heart, Compass, Zap, ChevronDown } from "lucide-react";
 import { useState } from "react";
 
+// REBUILD FORCE v8 - COMPLETE REWRITE - NO FORM - DIRECT KIWIFY LINK
+// Timestamp: 2026-05-04T23:40:00Z
+// This component has NO email form, NO handleSubmit, NO state for email
+// Button is ONLY a direct link to Kiwify checkout
+
 export default function Home() {
-  // Force cache bust - v7 - NUCLEAR FORCE REBUILD - TIMESTAMP: 2026-05-04T23:10:00Z
   const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
 
   return (
@@ -195,32 +199,28 @@ export default function Home() {
 
           {/* Bonus Section */}
           <div className="bg-gradient-to-r from-amber-900/30 to-orange-900/30 backdrop-blur border border-amber-500/30 rounded-2xl p-8">
-            <h3 className="text-2xl font-bold text-amber-300 mb-8 flex items-center gap-2">
-              <Sparkles className="w-6 h-6" />
-              Bônus Exclusivos
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8">
+            <h3 className="text-2xl font-bold text-amber-300 mb-6">+ Bônus Exclusivos:</h3>
+            <div className="grid md:grid-cols-2 gap-6">
               {[
                 {
                   icon: Podcast,
                   title: "Podcast Exclusivo",
-                  subtitle: "A Jornada da Vocação (~14 minutos)",
-                  description: "Episódio curto e profundo, para lembrar que vocação é chamado, não invenção. Distinguir propósito verdadeiro de promessas vazias. Ideal para momentos de confusão ou decisões importantes."
+                  description: "~14 minutos de conteúdo áudio exclusivo que sintetiza os pilares da jornada vocacional."
                 },
                 {
                   icon: FileText,
                   title: "Fichário Prático",
-                  subtitle: "A Jornada da Vocação (Workbook)",
-                  description: "Seu laboratório de vocação: mergulhe na jornada interior e descubra seu chamado autêntico. Através de reflexões guiadas baseadas em Viktor Frankl, Teresa d'Ávila e Carl Jung, você processará suas inquietações, escreverá suas descobertas, orará por clareza e decidirá seus próximos passos concretos. Transforme a Grande História em sua história pessoal com exercícios práticos que conectam o divino ao seu propósito único."
+                  description: "Workbook em PDF com exercícios de reflexão, escrita, oração e decisão para transformar ideias em ação concreta."
                 }
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="bg-blue-900/50 backdrop-blur border border-amber-400/30 rounded-xl p-6">
-                    <Icon className="w-8 h-8 text-amber-400 mb-4" />
-                    <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                    <p className="text-sm text-amber-300 font-semibold mb-3">{item.subtitle}</p>
-                    <p className="text-blue-100">{item.description}</p>
+                  <div key={idx} className="flex gap-4">
+                    <Icon className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
+                    <div>
+                      <h4 className="font-bold text-white mb-1">{item.title}</h4>
+                      <p className="text-amber-50 text-sm">{item.description}</p>
+                    </div>
                   </div>
                 );
               })}
@@ -229,159 +229,16 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Journey Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-800 to-blue-900">
-        <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-            Ao Caminhar Por Este Processo, Você Vai...
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                icon: Compass,
-                title: "Reconhecer a Fome de Sentido",
-                description: "Usar a inquietação como bússola, não como fraqueza"
-              },
-              {
-                icon: Heart,
-                title: "Entender Vocação como Chamado",
-                description: "Resposta a um chamado, não como um produto a ser consumido"
-              },
-              {
-                icon: Sparkles,
-                title: "Percorrer a Jornada Interior",
-                description: "Explorar o castelo da alma e as camadas da consciência"
-              },
-              {
-                icon: Zap,
-                title: "Enxergar Sua História Maior",
-                description: "Como parte de uma Grande História que transcende você"
-              },
-              {
-                icon: Heart,
-                title: "Integrar Dons e Missão",
-                description: "Unir dons naturais, caráter, sofrimento e amor em propósito concreto"
-              },
-              {
-                icon: Compass,
-                title: "Construir Práticas Sustentáveis",
-                description: "Hábitos que sustentam sua vocação a longo prazo"
-              }
-            ].map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <div key={idx} className="flex gap-4">
-                  <Icon className="w-6 h-6 text-amber-400 flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="text-lg font-bold text-white mb-2">{item.title}</h3>
-                    <p className="text-blue-100">{item.description}</p>
-                  </div>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* For Whom Section */}
-      <section className="py-20">
-        <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-            Para Quem É (E Para Quem Não É)
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-green-900/30 backdrop-blur border border-green-500/30 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-green-300 mb-6 flex items-center gap-2">
-                <Check className="w-6 h-6" />
-                É para você se:
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Sente um vazio ou inquietação, mesmo 'com tudo certo' por fora",
-                  "Deseja alinhar fé, dons, trabalho e vida cotidiana a um propósito profundo",
-                  "Busca profundidade, mas com linguagem clara e exemplos práticos",
-                  "Está disposto a olhar para dentro, escrever, refletir e agir"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-green-50">
-                    <Check className="w-5 h-5 text-green-400 flex-shrink-0 mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="bg-red-900/30 backdrop-blur border border-red-500/30 rounded-xl p-8">
-              <h3 className="text-2xl font-bold text-red-300 mb-6 flex items-center gap-2">
-                <span className="text-2xl">✕</span>
-                Não é para você se:
-              </h3>
-              <ul className="space-y-3">
-                {[
-                  "Quer apenas uma fórmula mágica de 'fique rico rápido'",
-                  "Não pretende se envolver de verdade com a própria história",
-                  "Busca motivação rasa e imediata, sem compromisso real",
-                  "Espera transformação sem reflexão e ação pessoal"
-                ].map((item, idx) => (
-                  <li key={idx} className="flex items-start gap-3 text-red-50">
-                    <span className="text-red-400 font-bold flex-shrink-0 mt-0.5">•</span>
-                    {item}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Differentiators Section */}
-      <section className="py-20 bg-gradient-to-r from-slate-800 to-blue-900">
-        <div className="container">
-          <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-16">
-            Por Que Este Material É Diferente
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {[
-              {
-                title: "Profundidade com Clareza",
-                description: "Autores renomados (Frankl, Teresa d'Ávila, Jung, Warren, Wright) traduzidos com linguagem acessível e exemplos práticos."
-              },
-              {
-                title: "Integração Real",
-                description: "Espiritualidade, psicologia, filosofia e vida prática andam juntas — não separadas."
-              },
-              {
-                title: "Caminho, Não Evento",
-                description: "Você pode revisitar o conteúdo em diferentes fases da vida. Não é um 'programa de 30 dias' que você esquece."
-              },
-              {
-                title: "Ferramenta Prática",
-                description: "O fichário transforma ideias em passos concretos. Você não só entende; você processa, escreve, ora e decide."
-              }
-            ].map((item, idx) => (
-              <div key={idx} className="bg-blue-900/50 backdrop-blur border border-blue-500/30 rounded-xl p-8">
-                <h3 className="text-xl font-bold text-amber-400 mb-4">{item.title}</h3>
-                <p className="text-blue-100 leading-relaxed">{item.description}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
+      {/* CTA Section - DIRECT KIWIFY LINK ONLY */}
       <section id="cta" className="py-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20">
           <div className="absolute top-1/2 left-1/2 w-96 h-96 bg-amber-500 rounded-full mix-blend-multiply filter blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
         </div>
-
         <div className="container relative z-10">
           <div className="max-w-2xl mx-auto text-center space-y-8">
             <h2 className="text-4xl md:text-5xl font-bold text-white">
               Pronto para Despertar Sua Vocação?
             </h2>
-
             <div className="bg-gradient-to-br from-amber-500/20 to-blue-500/20 backdrop-blur border border-amber-400/50 rounded-2xl p-12">
               <p className="text-3xl font-bold text-white mb-2">R$ 97</p>
               <p className="text-blue-100 mb-6">Acesso completo a todo o material</p>
@@ -416,6 +273,7 @@ export default function Home() {
                 </div>
               </div>
 
+              {/* THIS IS THE ONLY CTA - DIRECT LINK TO KIWIFY */}
               <a
                 href="https://kiwify.app/cU9GAE0"
                 target="_blank"
@@ -448,52 +306,52 @@ export default function Home() {
             {[
               {
                 question: "Como funciona o acesso ao material?",
-                answer: "Após a compra, você receberá um email com um link de acesso. Você poderá baixar todos os arquivos (ebook, vídeo, áudio, podcast e workbook) imediatamente. O acesso é vitalício — você pode revisitar o conteúdo quantas vezes quiser."
+                answer: "Após a compra, você recebe um email com links para download do ebook, vídeo e áudio. Você pode acessar quantas vezes quiser."
               },
               {
-                question: "Posso acessar em múltiplos dispositivos?",
-                answer: "Sim! Você pode acessar o material em computador, tablet e smartphone. Os arquivos são seus para usar como preferir — offline ou online, em qualquer dispositivo."
+                question: "Funciona em qualquer dispositivo?",
+                answer: "Sim! O ebook é PDF (compatível com qualquer dispositivo), o vídeo é em MP4 (pode assistir em celular, tablet ou computador) e o áudio é em MP3."
               },
               {
-                question: "Qual é a política de reembolso?",
-                answer: "Se você não ficar satisfeito nos primeiros 7 dias, oferecemos reembolso total, sem perguntas. Queremos que você se sinta seguro ao investir em sua jornada de discernimento vocacional."
+                question: "Há reembolso se eu não gostar?",
+                answer: "Sim. Você tem 7 dias após a compra para solicitar reembolso total, sem perguntas. Basta enviar um email para Contato@conquista22produtosdigitais.com"
               },
               {
-                question: "O material é apenas para pessoas religiosas?",
-                answer: "Não. Embora o material explore dimensões espirituais, ele é acessível a qualquer pessoa que busque profundidade e sentido na vida. Os autores citados (Frankl, Jung, etc.) oferecem perspectivas universais sobre propósito e significado."
+                question: "Esse produto é para mim?",
+                answer: "Se você sente que há mais na vida do que está vivendo, se busca sentido e propósito, se quer entender seu chamado único — sim, é para você."
               },
               {
-                question: "Quanto tempo leva para completar o material?",
+                question: "Quanto tempo leva para completar?",
                 answer: "Não há prazo fixo. O ebook tem cerca de 95 páginas (2-3 horas de leitura). O áudio tem 2+ horas. O workbook é prático e pode ser feito no seu ritmo. Recomendamos dedicar 2-4 semanas para uma jornada completa, mas você pode ir mais rápido ou mais lento conforme necessário."
               },
               {
-                question: "Há suporte ou comunidade após a compra?",
-                answer: "Sim! Você terá acesso a suporte por email em Contato@conquista22produtosdigitais.com para dúvidas sobre o material. Estamos desenvolvendo uma comunidade exclusiva para clientes — fique atento para atualizações!"
-              },
-              {
-                question: "O que diferencia este material de outros cursos sobre propósito?",
+                question: "Qual é o diferencial desse produto?",
                 answer: "Este não é um 'curso rápido'. É um caminho estruturado que integra espiritualidade, psicologia, filosofia e vida prática. Baseado em autores renomados como Viktor Frankl, Teresa d'Ávila e Jung, com linguagem clara e exemplos práticos. O workbook transforma ideias em ações concretas."
               },
               {
-                question: "Posso compartilhar o material com amigos?",
-                answer: "O material é para uso pessoal. Se seus amigos se interessarem, cada um deve adquirir sua própria cópia. Assim você também nos ajuda a continuar criando conteúdo de qualidade."
+                question: "Há suporte ou comunidade após a compra?",
+                answer: "Sim! Você pode entrar em contato conosco em Contato@conquista22produtosdigitais.com para dúvidas ou sugestões. Estamos aqui para apoiar sua jornada."
+              },
+              {
+                question: "Posso compartilhar com outras pessoas?",
+                answer: "O material é para uso pessoal. Se você conhece alguém que possa se beneficiar, convide-o a adquirir sua própria cópia — assim você apoia nosso trabalho de criar conteúdo de qualidade."
               }
             ].map((faq, idx) => (
-              <div key={idx} className="bg-blue-900/30 backdrop-blur border border-blue-500/20 rounded-xl overflow-hidden">
+              <div key={idx} className="bg-blue-900/30 backdrop-blur border border-blue-500/20 rounded-lg overflow-hidden">
                 <button
                   onClick={() => setExpandedFaq(expandedFaq === idx ? null : idx)}
-                  className="w-full p-6 flex items-start justify-between hover:bg-blue-900/50 transition-colors text-left"
+                  className="w-full px-6 py-4 flex items-center justify-between hover:bg-blue-900/50 transition-colors"
                 >
-                  <h3 className="text-lg font-bold text-white pr-4">{faq.question}</h3>
+                  <span className="text-left font-semibold text-white">{faq.question}</span>
                   <ChevronDown
-                    className={`w-5 h-5 text-amber-400 flex-shrink-0 transition-transform ${
+                    className={`w-5 h-5 text-amber-400 transition-transform ${
                       expandedFaq === idx ? "rotate-180" : ""
                     }`}
                   />
                 </button>
                 {expandedFaq === idx && (
-                  <div className="px-6 pb-6 border-t border-blue-500/20">
-                    <p className="text-blue-100 leading-relaxed">{faq.answer}</p>
+                  <div className="px-6 py-4 bg-blue-900/20 border-t border-blue-500/20 text-blue-100">
+                    {faq.answer}
                   </div>
                 )}
               </div>
