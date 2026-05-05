@@ -275,7 +275,7 @@ export default function Home() {
 
               {/* THIS IS THE ONLY CTA - DIRECT LINK TO KIWIFY - ABSOLUTE URL */}
               <a
-                href="https://kiwify.app/cU9GAE0"
+                href="/kiwify.html"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-full inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50 mb-6 text-center"

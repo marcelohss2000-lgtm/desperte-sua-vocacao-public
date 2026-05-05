@@ -1,0 +1,15 @@
+# Redirect 301 permanente para Kiwify
+# Qualquer acesso a /kiwify.html vai ser redirecionado para https://kiwify.app/cU9GAE0
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  
+  # Redirect /kiwify.html para Kiwify
+  RewriteRule ^kiwify\.html$ https://kiwify.app/cU9GAE0 [R=301,L]
+  
+  # Redirect qualquer acesso a /checkout ou /comprar para Kiwify
+  RewriteRule ^(checkout|comprar|purchase)/?$ https://kiwify.app/cU9GAE0 [R=301,L]
+  
+  # Redirect /obrigado para Kiwify (caso alguém tente acessar diretamente)
+  RewriteRule ^obrigado/?$ https://kiwify.app/cU9GAE0 [R=301,L]
+</IfModule>
