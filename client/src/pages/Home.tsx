@@ -160,6 +160,16 @@ export default function Home() {
             </div>
           </div>
 
+          {/* Audio Player */}
+          <div className="mb-16 bg-gradient-to-r from-blue-900/50 to-slate-900/50 backdrop-blur border border-blue-500/30 rounded-2xl p-8">
+            <h3 className="text-2xl font-bold text-white mb-6">Ouça o Áudio Completo:</h3>
+            <audio controls className="w-full h-12 rounded-lg">
+              <source src="https://files.manuscdn.com/user_upload_by_module/session_file/310519663159158705/umlVGyHuaSdfOUuM.mp3" type="audio/mpeg" />
+              Seu navegador não suporta o elemento de áudio.
+            </audio>
+            <p className="text-blue-100 mt-4 text-sm">Mais de 2 horas de conteúdo inspirador. Ouça enquanto dirige, caminha ou realiza suas tarefas diárias.</p>
+          </div>
+
           {/* Core Content */}
           <div className="mb-16">
             <h3 className="text-2xl font-bold text-white mb-8">Núcleo Principal:</h3>
