@@ -149,7 +149,16 @@ export default function Home() {
             </p>
           </div>
 
-
+          {/* Product Mockup Image */}
+          <div className="mb-16 flex justify-center">
+            <div className="rounded-2xl overflow-hidden shadow-2xl border border-amber-400/30 max-w-4xl w-full">
+              <img 
+                src="https://d2xsxph8kpxj0f.cloudfront.net/310519663159158705/STaNXRFA9foEsn7KhNuVwF/desperte-vocacao-mockup-updated_fa5e1b5c.png" 
+                alt="Desperte Sua Vocação - Mockup" 
+                className="w-full h-auto"
+              />
+            </div>
+          </div>
 
           {/* Core Content */}
           <div className="mb-16">
