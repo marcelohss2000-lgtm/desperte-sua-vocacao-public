@@ -229,24 +229,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Mockup Section */}
-      <section className="py-20 bg-gradient-to-b from-blue-900/50 to-slate-900/50">
-        <div className="container">
-          <div className="max-w-4xl mx-auto text-center space-y-8">
-            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
-              Veja como funciona
-            </h2>
-            <p className="text-xl text-blue-100 mb-8">
-              Acesse de qualquer dispositivo - desktop, tablet ou mobile
-            </p>
-            <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663159158705/STaNXRFA9foEsn7KhNuVwF/mockup-vercel-2026_1aa32bd5.png"
-              alt="Desperte Sua Vocação - Mockup"
-              className="w-full rounded-lg shadow-2xl border border-amber-400/30"
-            />
-          </div>
-        </div>
-      </section>
+
 
       {/* CTA Section - DIRECT KIWIFY LINK ONLY */}
       <section id="cta" className="py-20 relative overflow-hidden">
