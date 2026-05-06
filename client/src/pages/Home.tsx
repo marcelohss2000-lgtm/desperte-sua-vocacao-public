@@ -274,14 +274,14 @@ export default function Home() {
               </div>
 
               {/* THIS IS THE ONLY CTA - DIRECT LINK TO KIWIFY - ABSOLUTE URL */}
-              <a
-                href="/kiwify.html"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full inline-block bg-amber-500 hover:bg-amber-600 text-slate-900 font-bold text-lg py-6 rounded-lg transition-all hover:shadow-lg hover:shadow-amber-500/50 mb-6 text-center"
-              >
-                Quero Acessar Agora - R$ 97
-              </a>
+          <a
+            href="/checkout.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded-full transition-colors"
+          >
+            Quero Acessar Agora - R$ 97
+          </a>
 
               <p className="text-xs text-blue-300 mt-4 text-center">
                 Dúvidas? Envie um email para <a href="mailto:Contato@conquista22produtosdigitais.com" className="text-amber-400 hover:text-amber-300 font-semibold">Contato@conquista22produtosdigitais.com</a>
