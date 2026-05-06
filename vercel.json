@@ -1,6 +1,6 @@
 {
-  "buildCommand": "cd client && npm run build",
+  "buildCommand": "cd client && pnpm run build",
   "outputDirectory": "client/dist",
-  "installCommand": "npm install",
+  "installCommand": "pnpm install",
   "framework": null
 }
