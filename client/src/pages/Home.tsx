@@ -275,7 +275,7 @@ export default function Home() {
 
               {/* THIS IS THE ONLY CTA - DIRECT LINK TO KIWIFY - ABSOLUTE URL */}
           <a
-            href="/checkout.html"
+            href="https://pay.kiwify.com.br/ijYxC0g"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block px-8 py-4 bg-yellow-500 hover:bg-yellow-600 text-black font-bold rounded-full transition-colors"
