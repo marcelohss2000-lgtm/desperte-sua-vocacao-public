@@ -240,7 +240,7 @@ export default function Home() {
               Acesse de qualquer dispositivo - desktop, tablet ou mobile
             </p>
             <img
-              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663159158705/STaNXRFA9foEsn7KhNuVwF/desperte-sua-vocacao-mockup-v2_4d6a7577.png?v=2"
+              src="https://d2xsxph8kpxj0f.cloudfront.net/310519663159158705/STaNXRFA9foEsn7KhNuVwF/desperte-vocacao-mockup-final_b3d675bf.png?v=3"
               alt="Desperte Sua Vocação - Mockup"
               className="w-full rounded-lg shadow-2xl border border-amber-400/30"
             />
